@@ -19,6 +19,9 @@ app.use(cors())
 app.use(express.json())
 
 dotenv.config();
+app.get('/',(req,res)=>{
+    res.send('This server is running')
+})
 
 app.use('/quize',quize)
 app.use('/auth',auth)
