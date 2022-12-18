@@ -8,7 +8,7 @@ const JWT =require('jsonwebtoken');
 const quize=require('./routes/quize')
 const auth=require('./routes/auth')
 
-const port=8000;
+const port=process.env.PORT || 5000;
 
 const uri='mongodb+srv://moshiur:(masud422)@cluster0.7izsgvf.mongodb.net/?retryWrites=true&w=majority'
 
