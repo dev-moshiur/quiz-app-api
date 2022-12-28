@@ -10,7 +10,7 @@ const auth=require('./routes/auth')
 
 const port=process.env.PORT || 5000;
 
-const uri='mongodb+srv://moshiur:(masud422)@cluster0.7izsgvf.mongodb.net/?retryWrites=true&w=majority'
+const uri='mongodb+srv://Moshiur:(masud422)@cluster0.po8fwm4.mongodb.net/?retryWrites=true&w=majority'
 
 const app=express();
 
@@ -27,7 +27,7 @@ app.use('/quize',quize)
 app.use('/auth',auth)
 
 
-mongoose.connect(uri,)
+mongoose.connect(uri)
         .then(()=>console.log('DB is connected mow'))
         .catch((err)=>console.log('Not Connected',err));
 
