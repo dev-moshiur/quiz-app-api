@@ -40,31 +40,11 @@ const validPassword = await bcrypt.compare(req.body.password, user.password)
     
 
     if (validPassword) {
-
-      //genarate token
-
-      const token = await jwt.sign(
-        {
-          username: user.username,
-
-          isAdmin: user.isAdmin,
-        },
-        process.env.JWT_SECRET,
-        {
-          expiresIn: "6h",
-        }
-      );
       if (user.isAdmin) {
-        res
-          .cookie("token", token, {
-            secure: true,
-          })
-          .send("Cookie have been saved successfully");
+        res.status(200).json("you are a admin");
       } else {
         res.status(400).json("You are not an admin");
       }
-
-      
     } else {
       res.status(400).json("wrong password")
     }
