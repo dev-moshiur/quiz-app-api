@@ -15,15 +15,7 @@ const uri='mongodb+srv://Moshiur:(masud422)@cluster0.po8fwm4.mongodb.net/?retryW
 const app=express();
 
 
-app.use(cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "https://quiz-master-442.vercel.app",
-      
-    ],
-    credentials: true,
-  }))
+app.use(cors())
 app.use(express.json())
 
 dotenv.config();
